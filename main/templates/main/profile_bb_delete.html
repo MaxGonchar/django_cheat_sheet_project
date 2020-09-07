@@ -1,0 +1,16 @@
+{% extends "layout/basic.html" %}
+
+{% load bootstrap4 %}
+
+{% block title %}Удаление объявления - {{ user.username }}{% endblock %}
+
+{% block content %}
+<h2>Удаление объявления</h2>
+
+<!-- enctype="multipart/form-data" - method data coding for sending files -->
+<form method="post">
+    {% csrf_token %}
+    <p>ВЫ УВЕРЕНЫ?</p>
+    {% buttons submit='Удалить' %}{% endbuttons %}
+</form>
+{% endblock %}
